@@ -1,0 +1,14 @@
+
+.question {
+    list-style: none;
+    margin: 20px auto;
+}
+
+.question-item {
+    color: #459f3b;
+    text-decoration: none;
+}
+
+body {
+    background: white url("images/background.gif") no-repeat;
+}
