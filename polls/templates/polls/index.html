@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Polls</title>
+    <style>
+        .question {
+            list-style: none;
+            margin: 20px auto;
+        }
+
+        .question-item {
+            text-decoration: none;
+            color: #444444;
+        }
+    </style>
+</head>
+<body>
+{% if latest_question_list %}
+    <ul class="question-list">
+        {% for question in latest_question_list %}
+            <li class="question">
+                <a class="question-item" href="{% url 'polls:detail' question.id %}">
+                    {{ question.id }}. {{ question.question_text }}.</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available</p>
+{% endif %}
+
+</body>
+</html>
